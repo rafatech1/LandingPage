@@ -5,14 +5,17 @@
      estão locais, sem depender de link externo.
   2. [OK] OG:URL já aponta para https://lojaweb.eco.br — troque se o
      domínio final for outro.
-  3. CONTADOR: ajuste a data OFFER_END no <script> no fim do arquivo
-  4. DEPOIMENTOS: seção "depoimentos" usa framing honesto de lançamento
-     (sem depoimentos/nota inventados). Quando tiver depoimentos reais,
-     troque o conteúdo do bloco #depoimentos pelos cards reais.
-  5. RAFATECH: seção "sobre" já preenchida com posicionamento de marca
-     sem números inventados — ajuste o texto se quiser detalhar mais.
+  3. [OK] CONTADOR: contador de urgência de 15 min (COUNTDOWN_MINUTES no
+     <script> no fim do arquivo), reinicia a cada visita — não é mais uma
+     data fixa OFFER_END.
+  4. DEPOIMENTOS: seção "depoimentos" usa cards de EXEMPLO ILUSTRATIVO
+     (rotulados como tal, não são depoimentos reais de clientes). Quando
+     tiver depoimentos reais, troque o conteúdo do bloco #depoimentos.
+  5. [OK] RAFATECH: seção "sobre" já ajustada para refletir projeto de
+     desenvolvedor solo (não marca/empresa) — sem números inventados.
   6. PIXELS: descomente os blocos de Meta Pixel/GA4 no <head> com seus IDs
-  7. REDES SOCIAIS: troque os href="#" do rodapé pelos seus perfis reais.
+  7. [OK] REDES SOCIAIS: Instagram real (instagram.com/rafatech__) já
+     linkado no rodapé; nenhum href="#" restante.
 ============================================================ -->
 <html lang="pt-br">
 <head>
@@ -344,6 +347,24 @@
     color:var(--gold); background:rgba(245,185,66,0.1); border:1px solid rgba(245,185,66,0.3);
     padding:6px 14px; border-radius:999px; margin-bottom:14px;
   }
+
+  /* ===== TESTIMONIALS (ilustrativos, claramente marcados) ===== */
+  .testi-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-bottom:28px; }
+  .testi-card{ padding:28px 26px; }
+  .testi-badge{
+    display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:800;
+    letter-spacing:0.5px; text-transform:uppercase; color:#93c5fd;
+    background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.3);
+    padding:5px 12px; border-radius:999px; margin-bottom:16px;
+  }
+  .testi-card p{ font-size:15px; color:#c3cad9; margin-bottom:16px; }
+  .testi-scenario{ font-size:13px; color:#8b93a8; font-weight:600; display:flex; align-items:center; gap:8px; }
+  .testi-scenario svg{ width:16px; height:16px; stroke:var(--cyan); fill:none; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
+  .testi-note{
+    text-align:center; font-size:13px; color:#6b7690; max-width:640px; margin:0 auto;
+    border:1px dashed var(--border); border-radius:14px; padding:16px 20px;
+  }
+  @media (max-width:760px){ .testi-grid{ grid-template-columns:1fr; } }
 
   /* ===== BENEFIT CARDS ===== */
   .benefit-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
@@ -812,15 +833,27 @@
   <div class="wrap">
     <div class="section-title">
       <span class="eyebrow">DEPOIMENTOS</span>
-      <h2>Este material acabou de ser lançado</h2>
-      <p>Ainda não temos depoimentos publicados — e não vamos inventar nenhum. Assim que os primeiros leitores aplicarem o método, os relatos reais aparecem aqui.</p>
+      <h2>Como pode ser a sua rotina depois do guia</h2>
+      <p>Este material acabou de ser lançado, então ainda não temos depoimentos reais publicados — e preferimos não inventar nenhum. Os exemplos abaixo mostram situações do dia a dia que o método resolve, não avaliações de compradores.</p>
     </div>
-    <div class="sp-card">
-      <div>
-        <h3>Prefere confiar em transparência a em estrelas fabricadas?</h3>
-        <p>É por isso que esta seção está honesta com você. Garanta seu acesso agora, com a garantia incondicional de 7 dias, e comece sua própria história de resultado.</p>
+    <div class="testi-grid reveal-stagger">
+      <div class="glass-card testi-card">
+        <span class="testi-badge">Exemplo ilustrativo</span>
+        <p>"Já pensou em não abrir mais a caixa de e-mail com aquele aperto no estômago? É só pedir pra IA rascunhar as respostas — você lê, ajusta o tom e manda. O que tomava a manhã inteira vira coisa de minutos."</p>
+        <div class="testi-scenario"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>Cenário: quem vive de e-mail e atendimento</div>
+      </div>
+      <div class="glass-card testi-card">
+        <span class="testi-badge">Exemplo ilustrativo</span>
+        <p>"Tirar dúvida de madrugada, revisar um resumo antes da prova, entender um assunto difícil com outras palavras — é como ter alguém paciente do seu lado a qualquer hora, sem julgamento e sem pressa."</p>
+        <div class="testi-scenario"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Cenário: quem estuda ou quer aprender mais rápido</div>
+      </div>
+      <div class="glass-card testi-card">
+        <span class="testi-badge">Exemplo ilustrativo</span>
+        <p>"Precisa de uma arte bonita pro post de hoje e não quer depender de ninguém nem ficar testando comando ao acaso? Com o prompt certo, a imagem sai do jeito que você imaginou já na primeira tentativa."</p>
+        <div class="testi-scenario"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>Cenário: quem cria conteúdo pras redes</div>
       </div>
     </div>
+    <p class="testi-note">Estes três cards são exemplos ilustrativos de uso, não depoimentos de clientes reais. Assim que tivermos relatos de quem comprou e aplicou o método, eles entram aqui no lugar destes exemplos.</p>
   </div>
 </section>
 
