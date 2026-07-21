@@ -279,7 +279,16 @@
 
   /* ===== HERO ===== */
   .hero{ padding:calc(120px + 64px) 0 100px; overflow:hidden; }
-  .hero-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:64px; align-items:center; }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    grid-template-rows:auto 1fr;
+    grid-template-areas:"title visual" "content visual";
+    gap:0 64px; align-items:center;
+  }
+  .hero-title{ grid-area:title; }
+  .hero-content{ grid-area:content; }
+  .hero-visual{ grid-area:visual; }
   .hero h1{ font-size:clamp(2.4rem,4.6vw,3.75rem); margin-bottom:22px; }
   .hero p.lead{ font-size:18.5px; color:#a3adc2; margin-bottom:30px; max-width:540px; }
   .hero-highlights{ list-style:none; display:grid; gap:13px; margin-bottom:34px; }
@@ -521,11 +530,16 @@
   }
 
   @media (max-width:960px){
-    .hero-grid{ grid-template-columns:1fr; }
-    .hero-visual{ order:-1; height:560px; }
-    .book-tilt img{ width:300px; }
-    .book-reflection{ width:260px; }
-    .book-reflection img{ width:260px; }
+    .hero-grid{
+      grid-template-columns:1fr;
+      grid-template-rows:auto auto auto;
+      grid-template-areas:"title" "visual" "content";
+      gap:8px;
+    }
+    .hero-visual{ height:540px; margin-bottom:8px; }
+    .book-tilt img{ width:280px; }
+    .book-reflection{ width:240px; }
+    .book-reflection img{ width:240px; }
     .benefit-grid{ grid-template-columns:repeat(2,1fr); }
     .who-grid{ grid-template-columns:repeat(2,1fr); }
     .bonus-grid-mini{ grid-template-columns:repeat(2,1fr); }
@@ -545,11 +559,23 @@
   @media (max-width:520px){
     .benefit-grid, .bonus-grid-mini{ grid-template-columns:1fr; }
     .who-grid{ grid-template-columns:1fr 1fr; }
-    .hero{ padding-top:150px; }
-    .hero-visual{ height:420px; }
-    .book-tilt img{ width:220px; }
-    .book-reflection{ width:190px; }
-    .book-reflection img{ width:190px; }
+    .hero{ padding:118px 0 56px; }
+    .hero-grid{ text-align:center; }
+    .hero .eyebrow{ margin-left:auto; margin-right:auto; }
+    .hero h1{ font-size:clamp(1.9rem,8vw,2.4rem); }
+    .hero p.lead{ margin-left:auto; margin-right:auto; }
+    .hero-highlights{ justify-items:center; justify-content:center; }
+    .hero-highlights li{ justify-content:center; }
+    .hero-ctas{ justify-content:center; }
+    .hero-ctas .btn, .hero-ctas .btn-ghost{ max-width:none; width:100%; }
+    .hero-trust{ justify-content:center; }
+    .hero-visual{ height:370px; margin-top:4px; margin-bottom:4px; }
+    .book-tilt img{ width:190px; }
+    .book-reflection{ width:165px; bottom:-18px; }
+    .book-reflection img{ width:165px; }
+    .glow-blob.b1{ width:280px; height:280px; top:calc(50% - 180px); left:calc(50% - 190px); }
+    .glow-blob.b2{ width:240px; height:240px; top:calc(50% - 65px); left:calc(50% - 65px); }
+    .glow-blob.b3{ width:190px; height:190px; top:calc(50% - 115px); left:calc(50% - 20px); }
   }
 </style>
 </head>
@@ -587,9 +613,11 @@
 
 <section id="inicio" class="hero">
   <div class="wrap hero-grid">
-    <div class="reveal in-view">
+    <div class="hero-title reveal in-view">
       <span class="eyebrow"><span class="pulse"></span>E-BOOK DIGITAL · ACESSO IMEDIATO</span>
       <h1>Domine a Inteligência Artificial <span class="gradient-text">sem complicação.</span></h1>
+    </div>
+    <div class="hero-content reveal in-view">
       <p class="lead">Aprenda, na prática, como usar as melhores IAs para trabalhar, estudar, criar conteúdo e aumentar sua produtividade — sem jargão técnico, sem enrolação.</p>
       <ul class="hero-highlights">
         <li><span class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Sem linguagem técnica</li>
