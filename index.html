@@ -842,8 +842,8 @@ function tick(){
   let diff = Math.floor((OFFER_END - new Date()) / 1000);
   if (diff < 0) diff = 0;
   const m = Math.floor(diff/60), s = diff%60;
-  const eh = document.getElementById('pt-h'), em = document.getElementById('pt-m'), es = document.getElementById('pt-s');
-  if (eh) { eh.textContent = '00'; em.textContent = pad(m); es.textContent = pad(s); }
+  const em = document.getElementById('pt-m'), es = document.getElementById('pt-s');
+  if (em && es) { em.textContent = pad(m); es.textContent = pad(s); }
   const st = document.getElementById('sticky-timer');
   if (st) st.textContent = pad(m) + ':' + pad(s);
 }
