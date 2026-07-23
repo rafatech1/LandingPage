@@ -46,6 +46,7 @@
     "@type": "Offer",
     "price": "9.90",
     "priceCurrency": "BRL",
+    "priceValidUntil": "2026-07-31",
     "availability": "https://schema.org/InStock",
     "url": "https://pay.kiwify.com.br/tX3rY89"
   }
@@ -715,7 +716,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--faint);f
         <div class="price-old">De R$37,00</div>
         <div class="price-new"><sup>R$</sup>9,90</div>
         <div class="price-note">pagamento único · acesso imediato e vitalício</div>
-        <div class="price-note" style="margin-top:-16px">Preço de lançamento válido até <strong>31/07/2026</strong></div>
+        <div class="price-note deadline-note" style="margin-top:-16px">Preço de lançamento válido até <strong>31/07/2026</strong></div>
         <div class="timer">
           <div class="cell"><div class="n" id="pt-d">--</div><div class="l">dias</div></div>
           <div class="cell"><div class="n" id="pt-h">--</div><div class="l">horas</div></div>
@@ -861,7 +862,11 @@ function pad(n){ return String(n).padStart(2,'0'); }
 const OFFER_END = new Date('2026-07-31T23:59:59-03:00');
 function tick(){
   let diff = Math.floor((OFFER_END - new Date()) / 1000);
-  if (diff < 0) diff = 0;
+  if (diff <= 0) {
+    // prazo encerrado: esconde timer e textos de prazo para a página não exibir oferta vencida
+    document.querySelectorAll('.timer, .deadline-note, .sticky-label').forEach(el => el.style.display = 'none');
+    return;
+  }
   const d = Math.floor(diff/86400), h = Math.floor((diff%86400)/3600), m = Math.floor((diff%3600)/60);
   const ed = document.getElementById('pt-d'), eh = document.getElementById('pt-h'), em = document.getElementById('pt-m');
   if (ed && eh && em) { ed.textContent = pad(d); eh.textContent = pad(h); em.textContent = pad(m); }
