@@ -25,12 +25,12 @@
 <meta property="og:url" content="https://www.lojaweb.eco.br">
 <meta property="og:title" content="IA Descomplicada — O Guia Definitivo para Usar IA no Seu Dia a Dia">
 <meta property="og:description" content="Sem jargão, sem enrolação: prompts prontos, as melhores ferramentas de 2026 e um plano de 7 dias. Bônus: 100 prompts de imagens com IA.">
-<meta property="og:image" content="img/capa.png">
+<meta property="og:image" content="https://www.lojaweb.eco.br/img/capa.png">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="IA Descomplicada — O Guia Definitivo para Usar IA no Seu Dia a Dia">
 <meta name="twitter:description" content="Sem jargão, sem enrolação: prompts prontos, ferramentas de 2026 e plano de 7 dias.">
-<meta name="twitter:image" content="img/capa.png">
+<meta name="twitter:image" content="https://www.lojaweb.eco.br/img/capa.png">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233B82F6'/%3E%3Cstop offset='0.5' stop-color='%238B5CF6'/%3E%3Cstop offset='1' stop-color='%2306B6D4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='%230d0815'/%3E%3Crect width='100' height='100' rx='24' fill='url(%23g)' fill-opacity='0.9'/%3E%3Ctext x='50' y='68' font-family='Arial,sans-serif' font-size='50' font-weight='900' fill='white' text-anchor='middle'%3EIA%3C/text%3E%3C/svg%3E">
 
@@ -40,7 +40,7 @@
   "@type": "Product",
   "name": "IA Descomplicada — O Guia Definitivo para Usar Inteligência Artificial no Seu Dia a Dia",
   "description": "E-book prático para usar IA no trabalho, nos estudos e na criação de conteúdo, sem jargão técnico. Inclui bônus com 100 prompts de geração de imagens.",
-  "image": "img/capa.png",
+  "image": "https://www.lojaweb.eco.br/img/capa.png",
   "brand": { "@type": "Brand", "name": "RAFATECH" },
   "offers": {
     "@type": "Offer",
@@ -404,7 +404,14 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--faint);f
 @media(max-width:900px){
   .hero-grid,.inside-grid,.bonus-hero{grid-template-columns:1fr}
   .hero{padding-top:120px;min-height:auto}
-  .hero-visual{order:-1}
+  .hero-grid{display:flex;flex-direction:column}
+  .hero-text{display:contents}
+  .hero-grid .status{order:1}
+  .hero-grid h1{order:2}
+  .hero-visual{order:3;margin:24px 0}
+  .hero-grid .lead{order:4}
+  .hero-grid .hero-ctas{order:5}
+  .hero-grid .hero-trust{order:6}
   .hero-visual img.capa{width:min(240px,70%)}
   .num-grid,.compare{grid-template-columns:1fr}
   .bonus-mini{grid-template-columns:repeat(2,1fr)}
@@ -457,7 +464,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--faint);f
 <!-- ============ HERO ============ -->
 <section id="inicio" class="hero">
   <div class="wrap hero-grid">
-    <div>
+    <div class="hero-text">
       <span class="status"><span class="dot"></span>E-book digital · acesso imediato</span>
       <h1>Domine a IA <em>sem complicação.</em></h1>
       <p class="lead">Aprenda, na prática, como usar as melhores IAs para trabalhar, estudar, criar conteúdo e aumentar sua produtividade — sem jargão técnico, sem enrolação.</p>
@@ -648,13 +655,25 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--faint);f
 <section id="depoimentos">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="overline">Depoimentos</span>
+      <span class="overline">Prova, não promessa</span>
       <h2>Este material <em>acabou de ser lançado.</em></h2>
-      <p>Ainda não temos depoimentos publicados — e não vamos inventar nenhum. Assim que os primeiros leitores aplicarem o método, os relatos reais aparecem aqui.</p>
+      <p>Ainda não temos depoimentos publicados — e não vamos inventar nenhum. Em vez disso, veja o que o método produz na prática: resultados reais gerados com os prompts do e-book e do bônus.</p>
     </div>
-    <div class="testi-card reveal">
-      <h3>Prefere confiar em transparência a em estrelas fabricadas?</h3>
-      <p>É por isso que esta seção está honesta com você. Garanta seu acesso agora, com a garantia incondicional de 7 dias, e comece sua própria história de resultado.</p>
+    <!-- TODO: trocar cada bloco "antes" (texto genérico) e "depois" (img/resultado real, ex: img/resultado-1.png)
+         pelos seus próprios prints assim que estiverem disponíveis. -->
+    <div class="compare reveal">
+      <div class="compare-col before">
+        <h3>Antes — prompt genérico</h3>
+        <p style="color:var(--muted);font-size:15px">Ex.: "escreva um e-mail de cobrança" → resposta robótica, formal demais, sem gerar resposta do cliente.</p>
+      </div>
+      <div class="compare-col after">
+        <h3>Depois — com o método <em>C.T.F.T.R.</em></h3>
+        <p style="color:var(--muted);font-size:15px">[Espaço reservado: cole aqui o print do e-mail reescrito com o prompt do módulo 09, ou uma das imagens geradas com o bônus de 100 prompts.]</p>
+      </div>
+    </div>
+    <div class="testi-card reveal" style="margin-top:32px">
+      <h3>Prefere confiar em resultado a em estrelas fabricadas?</h3>
+      <p>É por isso que esta seção mostra prova, não depoimento. Garanta seu acesso agora, com a garantia incondicional de 7 dias, e comece sua própria história de resultado.</p>
     </div>
   </div>
 </section>
@@ -666,7 +685,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--faint);f
       <div class="about-content">
         <span class="overline">Quem criou o material</span>
         <h3>Rafatech__</h3>
-        <p>Rafael Costa é um desenvolver solo dedicado a tornar a Inteligência Artificial simples, prática e acessível para qualquer pessoa — sem jargão e sem enrolação.</p>
+        <p>Rafael Costa é um desenvolvedor solo dedicado a tornar a Inteligência Artificial simples, prática e acessível para qualquer pessoa — sem jargão e sem enrolação.</p>
         <p>Atuo com Inteligência Artificial, Automação, Desenvolvimento Web, Engenharia de Software e Inovação Digital, sempre com foco em soluções que realmente cabem no dia a dia de quem vai usar.</p>
         <div class="pills">
           <span>Inteligência Artificial</span>
@@ -696,9 +715,11 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--faint);f
         <div class="price-old">De R$37,00</div>
         <div class="price-new"><sup>R$</sup>9,90</div>
         <div class="price-note">pagamento único · acesso imediato e vitalício</div>
+        <div class="price-note" style="margin-top:-16px">Preço de lançamento válido até <strong>31/07/2026</strong></div>
         <div class="timer">
+          <div class="cell"><div class="n" id="pt-d">--</div><div class="l">dias</div></div>
+          <div class="cell"><div class="n" id="pt-h">--</div><div class="l">horas</div></div>
           <div class="cell"><div class="n" id="pt-m">--</div><div class="l">min</div></div>
-          <div class="cell"><div class="n" id="pt-s">--</div><div class="l">seg</div></div>
         </div>
         <ul class="includes">
           <li>E-book completo IA Descomplicada (10 módulos)</li>
@@ -806,7 +827,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--faint);f
     <span class="sticky-badge">-73%</span>
     <div>
       <div class="sticky-price"><s>R$37,00</s>R$9,90</div>
-      <div class="sticky-label">oferta de lançamento termina em <span id="sticky-timer">15:00</span></div>
+      <div class="sticky-label">preço de lançamento até 31/07 · faltam <span id="sticky-timer">--</span></div>
     </div>
   </div>
   <a href="https://pay.kiwify.com.br/tX3rY89" target="_blank" rel="noopener" class="btn" onclick="gtag('event','conversion',{'send_to':'AW-18340756853/jQtwCN-Al9QcEPX6xqlE','value':9.90,'currency':'BRL'});">Quero o meu <span class="arrow">→</span></a>
@@ -835,19 +856,19 @@ const io = new IntersectionObserver(entries => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// ===== countdown (15 minutos a partir da visita) =====
+// ===== countdown (prazo real do preço de lançamento) =====
 function pad(n){ return String(n).padStart(2,'0'); }
-const OFFER_END = new Date(Date.now() + 15 * 60 * 1000);
+const OFFER_END = new Date('2026-07-31T23:59:59-03:00');
 function tick(){
   let diff = Math.floor((OFFER_END - new Date()) / 1000);
   if (diff < 0) diff = 0;
-  const m = Math.floor(diff/60), s = diff%60;
-  const em = document.getElementById('pt-m'), es = document.getElementById('pt-s');
-  if (em && es) { em.textContent = pad(m); es.textContent = pad(s); }
+  const d = Math.floor(diff/86400), h = Math.floor((diff%86400)/3600), m = Math.floor((diff%3600)/60);
+  const ed = document.getElementById('pt-d'), eh = document.getElementById('pt-h'), em = document.getElementById('pt-m');
+  if (ed && eh && em) { ed.textContent = pad(d); eh.textContent = pad(h); em.textContent = pad(m); }
   const st = document.getElementById('sticky-timer');
-  if (st) st.textContent = pad(m) + ':' + pad(s);
+  if (st) st.textContent = d + 'd ' + pad(h) + 'h';
 }
-tick(); setInterval(tick, 1000);
+tick(); setInterval(tick, 60000);
 </script>
 
 </body>
