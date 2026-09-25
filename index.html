@@ -925,28 +925,21 @@ function trackCheckout(){
   const sections = Array.from(railLinks).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Absolute (document-relative) offsets, recomputed only on load/resize —
-  // never inside the scroll handler. Reading getBoundingClientRect() on
-  // every scroll frame is what forces the browser to recompute layout
-  // repeatedly; caching these once and comparing against window.scrollY
-  // (a plain number, no layout read) avoids that entirely.
-  let heroBottomAbs = 0;
-  let sectionTopsAbs = [];
-  function recalcOffsets(){
-    const y = window.scrollY;
-    heroBottomAbs = heroSection.getBoundingClientRect().bottom + y;
-    sectionTopsAbs = sections.map(s => s.getBoundingClientRect().top + y);
-  }
-
   function updateOnScroll(){
+    // Read every layout value first, then apply all DOM writes together —
+    // avoids the read/write/read/write interleaving that forces the browser
+    // to recompute layout multiple times per scroll frame.
     const scrollY = window.scrollY;
     const innerHeight = window.innerHeight;
-    const scrollable = document.documentElement.scrollHeight - innerHeight;
+    const heroBottom = heroSection.getBoundingClientRect().bottom;
+    const sectionTops = sections.map(s => s.getBoundingClientRect().top);
+    const doc = document.documentElement;
+    const scrollable = doc.scrollHeight - innerHeight;
 
     const showBackToTop = scrollY > innerHeight;
-    const showStickyBar = scrollY > heroBottomAbs;
+    const showStickyBar = heroBottom < 0;
     let current = sections[0];
-    for(let i = 0; i < sections.length; i++){ if(sectionTopsAbs[i] - 120 <= scrollY){ current = sections[i]; } }
+    for(let i = 0; i < sections.length; i++){ if(sectionTops[i] - 120 <= 0){ current = sections[i]; } }
     const frac = scrollable > 0 ? Math.min(1, Math.max(0, scrollY / scrollable)) : 0;
 
     backToTop.classList.toggle('visible', showBackToTop);
@@ -958,13 +951,6 @@ function trackCheckout(){
   }
   let scrollTicking = false;
   function onScroll(){ if(!scrollTicking){ requestAnimationFrame(updateOnScroll); scrollTicking = true; } }
-
-  let resizeTicking = false;
-  window.addEventListener('resize', function(){
-    if(resizeTicking) return;
-    resizeTicking = true;
-    requestAnimationFrame(function(){ recalcOffsets(); resizeTicking = false; });
-  }, { passive:true });
 
   function smoothScrollTo(targetY, duration = 800){
     if(reduceMotion){ window.scrollTo(0, targetY); return; }
@@ -1045,9 +1031,7 @@ function trackCheckout(){
     });
   });
 
-  recalcOffsets();
   window.addEventListener('scroll', onScroll, { passive:true });
-  window.addEventListener('load', recalcOffsets);
   onScroll();
   backToTop.addEventListener('click', function(){ smoothScrollTo(0); });
 
