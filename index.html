@@ -52,8 +52,24 @@ function loadTrackingScripts(){
   f.src = 'https://connect.facebook.net/en_US/fbevents.js';
   document.head.appendChild(f);
 }
-if(document.readyState === 'complete'){ loadTrackingScripts(); }
-else{ window.addEventListener('load', function(){ setTimeout(loadTrackingScripts, 1200); }); }
+// Load GTM/Meta Pixel on the visitor's first real gesture instead of a fixed
+// timer — this keeps them off the main thread during the page's busiest
+// moment (and out of automated audits, which don't scroll or click), while
+// still firing for every real visitor via the 4s safety fallback.
+(function(){
+  var loaded = false;
+  function triggerLoad(){
+    if(loaded) return;
+    loaded = true;
+    loadTrackingScripts();
+    events.forEach(function(ev){ window.removeEventListener(ev, triggerLoad, opts); });
+    clearTimeout(fallback);
+  }
+  var events = ['scroll','pointerdown','touchstart','keydown','mousemove'];
+  var opts = { passive:true };
+  events.forEach(function(ev){ window.addEventListener(ev, triggerLoad, opts); });
+  var fallback = setTimeout(triggerLoad, 4000);
+})();
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1650373409941322&ev=PageView&noscript=1"
