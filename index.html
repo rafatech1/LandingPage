@@ -183,7 +183,6 @@ src="https://www.facebook.com/tr?id=1650373409941322&ev=PageView&noscript=1"
   header.nav{position:sticky;top:0;z-index:60;background:rgba(11,9,6,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-ink);}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 44px;max-width:1180px;margin:0 auto;}
   .logo{font-weight:700;font-size:1.06rem;font-family:'Space Grotesk',sans-serif;color:var(--cream);display:flex;align-items:center;gap:9px;}
-  .logo .dot{width:9px;height:9px;border-radius:2px;background:var(--orange);}
   .nav-links{display:flex;align-items:center;gap:24px;}
   .nav-links a{font-size:.85rem;font-weight:500;color:var(--muted-ink);transition:color .2s;}
   .nav-links a:hover{color:var(--cream);}
@@ -217,8 +216,7 @@ src="https://www.facebook.com/tr?id=1650373409941322&ev=PageView&noscript=1"
   .panel-orange .card{background:rgba(23,15,8,.07);border:1px solid var(--line-orange);}
   .panel-tight{padding:clamp(48px,6vw,80px) 0;}
 
-  .stage-tag{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--muted-ink);letter-spacing:1px;}
-  .panel-orange .stage-tag{color:var(--black-ink);}
+  .logo .mark-glyph{color:var(--orange);flex-shrink:0;}
 
   /* ---- hero ---- */
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
@@ -478,7 +476,7 @@ src="https://www.facebook.com/tr?id=1650373409941322&ev=PageView&noscript=1"
 
 <header class="nav">
   <div class="nav-inner">
-    <div class="logo"><span class="dot"></span>Viral Sem Aparecer</div>
+    <div class="logo"><svg class="mark-glyph" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><polygon points="10 8 10 16 16 12" fill="currentColor" stroke="none"/></svg>Viral Sem Aparecer</div>
     <nav aria-label="Navegação principal">
       <ul class="nav-links">
         <li><a href="#problema" data-nav>Problema</a></li>
@@ -537,8 +535,8 @@ src="https://www.facebook.com/tr?id=1650373409941322&ev=PageView&noscript=1"
   <div class="wrap hero-grid">
     <div data-reveal>
       <span class="hero-eyebrow"><span class="dot"></span>MÉTODO PASSO A PASSO · ACESSO IMEDIATO</span>
-      <h1 class="hero">Crie vídeos que <span class="mark">viralizam</span> sem aparecer — mesmo que você trave na frente da câmera.</h1>
-      <p class="sub">O passo a passo completo com IA — roteiro, imagem, voz e edição — pra quem quer publicar todo dia sem filmar o rosto, sem estúdio e sem gastar com equipe.</p>
+      <h1 class="hero">Crie vídeos que <span class="mark">viralizam</span> sem aparecer, mesmo que você trave na frente da câmera.</h1>
+      <p class="sub">O passo a passo completo com IA (roteiro, imagem, voz e edição) pra quem quer publicar todo dia sem filmar o rosto, sem estúdio e sem gastar com equipe.</p>
       <div class="price-pill">
         <span class="old mono">R$67,00</span>
         <span class="new mono">R$27,00</span>
@@ -583,8 +581,7 @@ src="https://www.facebook.com/tr?id=1650373409941322&ev=PageView&noscript=1"
 <!-- 01 PROBLEMA -->
 <section class="panel panel-orange" id="problema" aria-labelledby="h-problema">
   <div class="wrap" data-reveal>
-    <span class="stage-tag">STAGE 01</span>
-    <div class="eyebrow" style="margin-top:10px;"><span class="tick"></span>SE NADA MUDAR</div>
+    <div class="eyebrow"><span class="tick"></span>01 · SE NADA MUDAR</div>
     <h2 id="h-problema" style="font-size:clamp(1.7rem,3.6vw,2.6rem);font-weight:700;max-width:680px;line-height:1.2;">Daqui a 6 meses, sua relação com as redes pode continuar <span class="mark">exatamente a mesma</span>.</h2>
     <ul class="problem-list">
       <li><span class="x">✕</span>Trava de câmera e adia gravar toda semana</li>
@@ -592,17 +589,16 @@ src="https://www.facebook.com/tr?id=1650373409941322&ev=PageView&noscript=1"
       <li><span class="x">✕</span>Não sabe o que falar nos primeiros segundos do vídeo</li>
       <li><span class="x">✕</span>Posta sem constância e o alcance nunca cresce</li>
     </ul>
-    <p class="muted" style="margin-top:28px;font-size:1rem;max-width:640px;font-weight:600;">Nenhum desses pontos é falta de talento. É falta de um sistema que funcione sem depender da sua câmera.</p>
+    <p class="muted" style="margin-top:28px;font-size:1rem;max-width:640px;font-weight:600;">Isso não tem nada a ver com talento. É que falta um sistema que funcione sem depender da câmera.</p>
   </div>
 </section>
 
 <!-- 02 MÉTODO -->
 <section class="panel panel-ink" id="metodo" aria-labelledby="h-metodo">
   <div class="wrap">
-    <span class="stage-tag">STAGE 02</span>
-    <div class="grid-2" style="margin-top:10px;align-items:start;">
+    <div class="grid-2" style="align-items:start;">
       <div data-reveal>
-        <div class="eyebrow"><span class="tick"></span>A SOLUÇÃO</div>
+        <div class="eyebrow"><span class="tick"></span>02 · A SOLUÇÃO</div>
         <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:700;line-height:1.18;max-width:480px;">Tudo o que você passa a <span class="mark">saber fazer</span> sem aparecer.</h2>
       </div>
       <div data-reveal style="display:flex;flex-direction:column;gap:20px;">
@@ -631,31 +627,31 @@ src="https://www.facebook.com/tr?id=1650373409941322&ev=PageView&noscript=1"
         <ul class="fit-list">
           <li>Já domina edição avançada e busca técnicas de nível profissional</li>
           <li>Espera resultado garantido sem publicar com constância</li>
-          <li>Não pretende gravar, ajustar ou publicar nenhum conteúdo — o método exige ação, não é passivo</li>
+          <li>Não pretende gravar, ajustar ou publicar nenhum conteúdo: o método pede ação</li>
         </ul>
       </div>
     </div>
     <div class="skills-grid" data-reveal>
       <div class="skill-badge">
-        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
         <div class="num mono" aria-hidden="true">01</div>
         <h3 class="name">Roteiro que prende atenção</h3>
         <div class="desc">O gancho certo pra travar o dedo no scroll nos 3 primeiros segundos, em qualquer nicho.</div>
       </div>
       <div class="skill-badge">
-        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span>
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="4" y1="10" x2="4" y2="14"/><line x1="8" y1="6" x2="8" y2="18"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="16" y1="6" x2="16" y2="18"/><line x1="20" y1="10" x2="20" y2="14"/></svg></span>
         <div class="num mono" aria-hidden="true">02</div>
         <h3 class="name">Imagem e voz por IA</h3>
         <div class="desc">Prompts prontos pra gerar cena e narração natural, sem aparecer nem gravar um áudio sequer.</div>
       </div>
       <div class="skill-badge">
-        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></span>
         <div class="num mono" aria-hidden="true">03</div>
         <h3 class="name">Edição sem complicação</h3>
         <div class="desc">Legenda automática e corte rápido, sem precisar saber editar vídeo de verdade.</div>
       </div>
       <div class="skill-badge">
-        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-6"/></svg></span>
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg></span>
         <div class="num mono" aria-hidden="true">04</div>
         <h3 class="name">Constância que viraliza</h3>
         <div class="desc">Calendário de 30 dias pra sair da inércia e postar todo santo dia, mesmo sem inspiração.</div>
@@ -667,11 +663,10 @@ src="https://www.facebook.com/tr?id=1650373409941322&ev=PageView&noscript=1"
 <!-- 03 CONTEÚDO -->
 <section class="panel panel-orange" id="conteudo" aria-labelledby="h-conteudo">
   <div class="wrap">
-    <span class="stage-tag">STAGE 03</span>
-    <div class="head" data-reveal style="margin-top:10px;">
-      <div class="eyebrow"><span class="tick"></span>SUMÁRIO COMPLETO</div>
+    <div class="head" data-reveal>
+      <div class="eyebrow"><span class="tick"></span>03 · SUMÁRIO COMPLETO</div>
       <h2 id="h-conteudo">Dez módulos, <span class="mark">zero enrolação.</span></h2>
-      <p class="muted">O sumário inteiro, sem letra miúda — porque você deveria saber exatamente o que está comprando.</p>
+      <p class="muted">O sumário inteiro, sem letra miúda, porque você deveria saber exatamente o que está comprando.</p>
     </div>
     <div class="curriculum-list" data-reveal>
       <div class="curriculum-item"><div class="n">01</div><div><h3>Por que "aparecer" não é mais obrigatório</h3><p>A virada de chave: contas sem rosto que viralizam e por que isso funciona.</p></div></div>
@@ -681,9 +676,9 @@ src="https://www.facebook.com/tr?id=1650373409941322&ev=PageView&noscript=1"
       <div class="curriculum-item"><div class="n">05</div><div><h3>Voz sem gravar a sua</h3><p>Narração por IA que soa natural, sem gravar um áudio sequer.</p></div></div>
       <div class="curriculum-item"><div class="n">06</div><div><h3>Legendas e edição automática</h3><p>Fluxo simples pra legendar e cortar sem saber editar vídeo.</p></div></div>
       <div class="curriculum-item"><div class="n">07</div><div><h3>Nicho e persona sem aparecer</h3><p>Como construir identidade de marca só com estética e consistência.</p></div></div>
-      <div class="curriculum-item"><div class="n">08</div><div><h3>10 roteiros prontos pra copiar e adaptar</h3><p>Modelos testados — só trocar o tema pelo seu nicho.</p></div></div>
+      <div class="curriculum-item"><div class="n">08</div><div><h3>10 roteiros prontos pra copiar e adaptar</h3><p>Modelos testados, só trocar o tema pelo seu nicho.</p></div></div>
       <div class="curriculum-item"><div class="n">09</div><div><h3>Calendário de postagem de 30 dias</h3><p>Passo a passo semana a semana até criar hábito de produção.</p></div></div>
-      <div class="curriculum-item"><div class="n">10</div><div><h3>Monetizando o conteúdo</h3><p>Afiliados, produto próprio, parcerias — os 4 caminhos pra virar dinheiro.</p></div></div>
+      <div class="curriculum-item"><div class="n">10</div><div><h3>Monetizando o conteúdo</h3><p>Afiliados, produto próprio, parcerias: os 4 caminhos pra virar dinheiro.</p></div></div>
     </div>
 
     <div class="grid-2" style="margin-top:64px;align-items:center;" data-reveal>
@@ -696,10 +691,10 @@ src="https://www.facebook.com/tr?id=1650373409941322&ev=PageView&noscript=1"
         <span class="roteiro-chip">Gancho + entrega + CTA em 30-60s</span>
       </div>
       <ul class="inside-list">
-        <li><strong>Roteiros prontos em destaque</strong><p>Modelos testados, prontos para copiar e adaptar — sem precisar criar do zero.</p></li>
+        <li><strong>Roteiros prontos em destaque</strong><p>Modelos testados, prontos para copiar e adaptar, sem precisar criar do zero.</p></li>
         <li><strong>Prompts de imagem organizados por categoria</strong><p>Qual prompt usar para cada estilo de vídeo, com exemplo pronto pra colar.</p></li>
         <li><strong>Passo a passo visual</strong><p>Cada módulo termina em ação: o que fazer, em que ferramenta, e o resultado esperado.</p></li>
-        <li><strong>Linguagem de gente, não de robô</strong><p>Escrito em português claro, com exemplos práticos — zero jargão técnico.</p></li>
+        <li><strong>Linguagem de gente, não de robô</strong><p>Escrito em português claro, com exemplos práticos, zero jargão técnico.</p></li>
       </ul>
     </div>
   </div>
@@ -708,8 +703,7 @@ src="https://www.facebook.com/tr?id=1650373409941322&ev=PageView&noscript=1"
 <!-- 04 TRANSFORMAÇÃO -->
 <section class="panel panel-ink" id="transformacao" aria-labelledby="h-transformacao">
   <div class="wrap" data-reveal>
-    <span class="stage-tag">STAGE 04</span>
-    <div class="eyebrow" style="margin-top:10px;"><span class="tick"></span>COM O MÉTODO</div>
+    <div class="eyebrow"><span class="tick"></span>04 · COM O MÉTODO</div>
     <h2 style="font-size:clamp(1.6rem,3.2vw,2.3rem);font-weight:700;max-width:640px;">É assim que fica sua rotina de conteúdo <span class="mark">depois</span> do Viral Sem Aparecer.</h2>
     <ul class="transform-list">
       <li><span class="ok">✓</span>Cria um vídeo pronto em minutos, sem gravar nada</li>
@@ -723,9 +717,8 @@ src="https://www.facebook.com/tr?id=1650373409941322&ev=PageView&noscript=1"
 <!-- 05 BÔNUS -->
 <section class="panel panel-orange" id="bonus" aria-labelledby="h-bonus">
   <div class="wrap">
-    <span class="stage-tag">STAGE 05</span>
-    <div class="head" data-reveal style="margin-top:10px;margin-bottom:0;">
-      <div class="eyebrow"><span class="tick"></span>BÔNUS INCLUSOS</div>
+    <div class="head" data-reveal style="margin-bottom:0;">
+      <div class="eyebrow"><span class="tick"></span>05 · BÔNUS INCLUSOS</div>
       <h2 id="h-bonus">Tudo isso já vem <span class="mark">junto</span> com o seu acesso.</h2>
     </div>
     <div class="bonus-mini-grid" data-reveal>
@@ -734,18 +727,17 @@ src="https://www.facebook.com/tr?id=1650373409941322&ev=PageView&noscript=1"
       <div class="bonus-mini"><div class="label">BÔNUS 03 · VALOR R$37</div><h3>Calendário de 30 dias em PDF</h3><p>Pra seguir dia a dia até criar hábito de produção.</p></div>
       <div class="bonus-mini"><div class="label">BÔNUS 04 · GRÁTIS</div><h3>Atualizações futuras</h3><p>Revisões e novidades do material chegam para você sem custo adicional.</p></div>
     </div>
-    <p class="bonus-total" data-reveal>Só esses 3 primeiros bônus já somam <strong>R$111</strong> em valor — hoje incluídos sem custo extra no seu acesso.</p>
+    <p class="bonus-total" data-reveal>Só esses 3 primeiros bônus já somam <strong>R$111</strong> em valor, hoje incluídos sem custo extra no seu acesso.</p>
   </div>
 </section>
 
 <!-- 06 CONFIANÇA + CRIADOR -->
 <section class="panel panel-ink" id="confianca" aria-labelledby="h-confianca">
   <div class="wrap">
-    <span class="stage-tag">STAGE 06</span>
-    <div class="head" data-reveal style="margin-top:10px;">
-      <div class="eyebrow"><span class="tick"></span>POR QUE CONFIAR NUM LANÇAMENTO NOVO</div>
-      <h2 id="h-confianca">Sem depoimentos inventados. <span class="mark">Só garantias reais.</span></h2>
-      <p class="muted">Este material é recém-lançado — preferimos não inventar depoimentos só para parecer mais confiável. Em vez disso, você decide com base em garantias concretas, não em prova social forjada.</p>
+    <div class="head" data-reveal>
+      <div class="eyebrow"><span class="tick"></span>06 · POR QUE CONFIAR NUM LANÇAMENTO NOVO</div>
+      <h2 id="h-confianca">Aqui não tem depoimento inventado, <span class="mark">só garantia de verdade.</span></h2>
+      <p class="muted">Este material é recém-lançado, então preferimos não inventar depoimentos só pra parecer mais confiável. Você decide com base em garantias concretas.</p>
     </div>
     <div class="trust-grid" data-reveal>
       <div class="trust-card card">
@@ -754,7 +746,7 @@ src="https://www.facebook.com/tr?id=1650373409941322&ev=PageView&noscript=1"
       </div>
       <div class="trust-card card">
         <h3 class="name">Autor identificável, não uma "empresa fantasma"</h3>
-        <p class="muted">Rafael Costa, com nome, Instagram e e-mail públicos — <a href="#sobre" data-nav>veja quem criou o material</a>.</p>
+        <p class="muted">Rafael Costa, com nome, Instagram e e-mail públicos. <a href="#sobre" data-nav>Veja quem criou o material</a>.</p>
       </div>
       <div class="trust-card card">
         <h3 class="name">Sumário completo visível antes de comprar</h3>
@@ -765,7 +757,7 @@ src="https://www.facebook.com/tr?id=1650373409941322&ev=PageView&noscript=1"
       <div class="creator-text">
         <div class="eyebrow"><span class="tick"></span>QUEM CRIOU O MATERIAL</div>
         <h2>Rafatech</h2>
-        <p class="muted">Rafael Costa é um desenvolvedor solo dedicado a tornar a Inteligência Artificial simples, prática e acessível para qualquer pessoa — sem jargão e sem enrolação.</p>
+        <p class="muted">Rafael Costa é um desenvolvedor solo dedicado a tornar a Inteligência Artificial simples, prática e acessível para qualquer pessoa, sem jargão e sem enrolação.</p>
         <p class="muted">Atuo com Inteligência Artificial, Automação, Desenvolvimento Web, Engenharia de Software e Inovação Digital, sempre com foco em soluções que realmente cabem no dia a dia de quem vai usar.</p>
         <div class="tag-cloud" style="margin-top:14px;">
           <span class="tag-pill">Inteligência Artificial</span>
@@ -784,9 +776,8 @@ src="https://www.facebook.com/tr?id=1650373409941322&ev=PageView&noscript=1"
 <!-- 07 PREÇO -->
 <section class="panel panel-orange" id="preco" aria-labelledby="h-preco">
   <div class="wrap pricing-inner" data-reveal>
-    <span class="stage-tag">STAGE 07</span>
-    <div class="eyebrow" style="margin-top:10px;"><span class="tick"></span>OFERTA DE LANÇAMENTO</div>
-    <h2 id="h-preco">Comece hoje — o acesso chega <span class="mark">em minutos.</span></h2>
+    <div class="eyebrow"><span class="tick"></span>07 · OFERTA DE LANÇAMENTO</div>
+    <h2 id="h-preco">Comece hoje: o acesso chega <span class="mark">em minutos.</span></h2>
     <p class="sub muted">Pagamento único, sem mensalidade. Tudo que você recebe está listado abaixo, sem pegadinha.</p>
     <div class="price-card card">
       <div class="price-top">
@@ -816,7 +807,7 @@ src="https://www.facebook.com/tr?id=1650373409941322&ev=PageView&noscript=1"
         <li class="total"><span>Total hoje</span><span class="v">R$27,00</span></li>
       </ul>
       <a href="https://pay.kiwify.com.br/saO8QQY" onclick="trackCheckout()" class="btn btn-primary btn-block">Quero começar agora <span class="arrow">→</span></a>
-      <p class="price-risk">Sem risco: se não gostar, é só pedir reembolso em até 7 dias — sem justificar.</p>
+      <p class="price-risk">Sem risco: se não gostar, é só pedir reembolso em até 7 dias, sem justificar.</p>
       <img class="cards" src="img/cartoes.webp" alt="Aceitamos MasterCard, Visa, American Express, Diners Club, Hipercard e Elo" width="1024" height="120" loading="lazy" decoding="async">
       <div class="trust-row">
         <div class="item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Ambiente seguro Kiwify</div>
@@ -827,7 +818,7 @@ src="https://www.facebook.com/tr?id=1650373409941322&ev=PageView&noscript=1"
       <img src="img/garantia.webp" alt="" aria-hidden="true" width="300" height="300" loading="lazy" decoding="async">
       <div>
         <h3>Garantia incondicional de 7 dias</h3>
-        <p>Leia o material, teste os prompts, aplique o plano. Se em até 7 dias você achar que não é para você, basta pedir o reembolso direto na plataforma e devolvemos 100% do valor — sem perguntas, sem burocracia.</p>
+        <p>Leia o material, teste os prompts, aplique o plano. Se em até 7 dias você achar que não é para você, basta pedir o reembolso direto na plataforma e devolvemos 100% do valor, sem perguntas, sem burocracia.</p>
       </div>
     </div>
   </div>
@@ -836,19 +827,18 @@ src="https://www.facebook.com/tr?id=1650373409941322&ev=PageView&noscript=1"
 <!-- 08 FAQ -->
 <section class="panel panel-ink panel-tight" id="faq" aria-labelledby="h-faq">
   <div class="wrap">
-    <span class="stage-tag">STAGE 08</span>
-    <div class="head" data-reveal style="margin-top:10px;">
-      <div class="eyebrow"><span class="tick"></span>DÚVIDAS FREQUENTES</div>
+    <div class="head" data-reveal>
+      <div class="eyebrow"><span class="tick"></span>08 · DÚVIDAS FREQUENTES</div>
       <h2 id="h-faq">Você talvez esteja <span class="mark">se perguntando…</span></h2>
     </div>
     <div class="faq" data-reveal>
-      <details open><summary>Preciso aparecer ou gravar minha voz em algum momento?</summary><p>Não. Todo o método foi desenhado pra funcionar 100% com ferramentas de IA — geração de imagem, narração e legenda. Você pode aparecer se quiser, mas não é necessário em nenhum passo.</p></details>
-      <details><summary>Por que o preço é tão baixo? Tem pegadinha?</summary><p>Não tem. É um preço de lançamento, válido só até a data marcada no cronômetro — depois disso o e-book volta ao valor cheio de R$67,00. É pagamento único, sem mensalidade e sem cobrança escondida.</p></details>
+      <details open><summary>Preciso aparecer ou gravar minha voz em algum momento?</summary><p>Não. Todo o método foi desenhado pra funcionar 100% com ferramentas de IA: geração de imagem, narração e legenda. Você pode aparecer se quiser, mas não é necessário em nenhum passo.</p></details>
+      <details><summary>Por que o preço é tão baixo? Tem pegadinha?</summary><p>Não tem. É um preço de lançamento, válido só até a data marcada no cronômetro. Depois disso, o e-book volta ao valor cheio de R$67,00. É pagamento único, sem mensalidade e sem cobrança escondida.</p></details>
       <details><summary>Preciso saber editar vídeo?</summary><p>Não. O material ensina um fluxo simplificado de edição com legenda automática, sem precisar de conhecimento prévio.</p></details>
       <details><summary>O acesso é imediato após a compra?</summary><p>Sim. O acesso é liberado imediatamente após a confirmação do pagamento, direto no e-mail cadastrado no checkout. Pix e cartão liberam em minutos.</p></details>
       <details><summary>Funciona no celular?</summary><p>Sim. O e-book é entregue em PDF e pode ser lido no celular, tablet, computador ou e-reader, na hora que for melhor para você.</p></details>
       <details><summary>Quais formas de pagamento estão disponíveis?</summary><p>Cartão de crédito, Pix e boleto, processados com segurança pela plataforma Kiwify.</p></details>
-      <details><summary>Por quanto tempo tenho acesso ao material?</summary><p>O acesso é vitalício — você pode consultar o e-book e os bônus sempre que quiser, quantas vezes quiser.</p></details>
+      <details><summary>Por quanto tempo tenho acesso ao material?</summary><p>O acesso é vitalício: você pode consultar o e-book e os bônus sempre que quiser, quantas vezes quiser.</p></details>
       <details><summary>Tem garantia?</summary><p>Sim, 7 dias de garantia incondicional. Se não for para você, é só solicitar o reembolso pela própria Kiwify dentro do prazo e devolvemos o valor integral.</p></details>
       <details><summary>Não tem depoimentos na página. Como eu confio?</summary><p>Preferimos não inventar depoimentos de um material recém-lançado só pra parecer mais confiável. Em vez disso: o autor é identificável (nome, Instagram e e-mail públicos), o sumário completo está nesta página sem letra miúda, e você tem 7 dias de garantia incondicional pra testar antes de decidir se vale.</p></details>
     </div>
@@ -859,7 +849,7 @@ src="https://www.facebook.com/tr?id=1650373409941322&ev=PageView&noscript=1"
 <section class="panel panel-orange contact" id="cta-final" aria-labelledby="h-cta-final" data-reveal>
   <div class="wrap">
     <h2 id="h-cta-final">O próximo vídeo que você criar pode ser o <span class="mark">primeiro de uma conta que viraliza.</span></h2>
-    <p class="sub muted">Comece hoje com 60% off e 7 dias de garantia — sem risco, sem mensalidade. Depois do cronômetro zerar, o preço volta ao normal.</p>
+    <p class="sub muted">Comece hoje com 60% off e 7 dias de garantia, sem risco e sem mensalidade. Depois do cronômetro zerar, o preço volta ao normal.</p>
     <a href="https://pay.kiwify.com.br/saO8QQY" onclick="trackCheckout()" class="btn btn-primary">Quero garantir por R$27 <span class="arrow">→</span></a>
     <span class="micro">Acesso imediato · pagamento único · garantia de 7 dias</span>
   </div>
@@ -872,7 +862,7 @@ src="https://www.facebook.com/tr?id=1650373409941322&ev=PageView&noscript=1"
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="logo"><span class="dot"></span>Viral Sem Aparecer</div>
+        <div class="logo"><svg class="mark-glyph" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><polygon points="10 8 10 16 16 12" fill="currentColor" stroke="none"/></svg>Viral Sem Aparecer</div>
         <p>Tecnologia · Inteligência Artificial · Conteúdo Digital. Um material de Rafatech.</p>
         <div class="footer-social">
           <a href="https://www.instagram.com/rafatech__" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
